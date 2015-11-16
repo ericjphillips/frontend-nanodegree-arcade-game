@@ -2,7 +2,7 @@
 var Enemy = function(lane) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
-    this.x = 0;
+    this.x = -101;
     this.y = (41 * lane * 2) - 21;
     this.speed = Math.random()*50 + 50;
 
@@ -17,7 +17,13 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-    this.x += dt*this.speed;
+    if (this.x > 606){
+        this.x = -101;
+        this.speed = Math.random()*50 + 50;
+    }
+    else {
+        this.x += dt * this.speed;
+    }
 };
 
 // Draw the enemy on the screen, required method for game
