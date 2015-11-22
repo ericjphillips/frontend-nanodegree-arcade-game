@@ -4,7 +4,7 @@ var Enemy = function(lane) {
     // we've provided one for you to get started
     this.x = -101;
     this.y = (41 * lane * 2) - 21;
-    this.speed = Math.random()*50 + 50;
+    this.speed = Math.random()*70 + 70;
 
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
@@ -54,10 +54,16 @@ Player.prototype.handleInput = function(keyCode) {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
-var firstEnemy = new Enemy(1);
-var secondEnemy = new Enemy(2);
-var thirdEnemy = new Enemy(3);
-var allEnemies = [firstEnemy, secondEnemy, thirdEnemy];
+function createEnemies(){
+    for (var i = 1; i <=3; i++){
+        var newEnemy = new Enemy(i);
+        allEnemies.push(newEnemy);
+    }
+}
+
+var allEnemies = [];
+createEnemies();
+setTimeout(createEnemies, 4000);
 
 var player = new Player;
 
