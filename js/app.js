@@ -71,6 +71,9 @@ Player.prototype.handleInput = function(keyCode) {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
+var allEnemies = [];
+
+//place one enemy on each lane and push to allEnemies
 function createEnemies(){
     for (var i = 1; i <=3; i++){
         var newEnemy = new Enemy(i);
@@ -78,13 +81,10 @@ function createEnemies(){
     }
 }
 
-var allEnemies = [];
+//instantiate two sets of Enemies and a Player
 createEnemies();
 setTimeout(createEnemies, 4000);
-
 var player = new Player;
-
-
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
