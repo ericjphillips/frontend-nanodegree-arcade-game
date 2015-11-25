@@ -4,6 +4,8 @@ var Enemy = function(lane) {
     // we've provided one for you to get started
     this.x = -101;
     this.y = (41 * lane * 2) - 21;
+    this.width = 101;
+    this.height = 75;
     this.speed = Math.random()*70 + 70;
 
     // The image/sprite for our enemies, this uses
@@ -38,10 +40,27 @@ var Player = function() {
     this.sprite = 'images/char-boy.png'
     this.x = 202;
     this.y = 404;
+    this.width = 51;
+    this.height = 90;
 }
 
-Player.prototype.update = function(dt) {
+Player.prototype.weHaveACollision = function(enemyArray){
+    var collisionDetected = false;
+    for (i = 0; i < enemyArray.length; i++){
+        if (this.x < enemyArray[i].x + enemyArray[i].width &&
+           this.x + this.width > enemyArray[i].x &&
+           this.y < enemyArray[i].y + enemyArray[i].height &&
+           this.y + this.height > enemyArray[i].y)
+            collisionDetected = true;
+    }
+    return collisionDetected;
+}
 
+Player.prototype.update = function() {
+    if (this.weHaveACollision(allEnemies)){
+        this.x = 202;
+        this.y = 404;
+    }
 }
 
 Player.prototype.render = function() {
