@@ -181,4 +181,6 @@ var Engine = (function(global) {
      * from within their app.js files.
      */
     global.ctx = ctx;
+    ctx.font = "30px sans-serif"
+    ctx.fillText("Score: " + 0, 0, 30);
 })(this);
