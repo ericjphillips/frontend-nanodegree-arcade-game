@@ -181,6 +181,8 @@ var Engine = (function(global) {
      * from within their app.js files.
      */
     global.ctx = ctx;
+
+    //once context is available, write initial score to canvas
     ctx.font = "30px sans-serif"
     ctx.fillText("Score: " + 0, 0, 30);
 })(this);

@@ -6,7 +6,7 @@ var Enemy = function(lane) {
     this.y = (41 * lane * 2) - 21;
     this.width = 101;
     this.height = 75;
-    this.speed = Math.random()*70 + 70;
+    this.speed = Math.random() * 70 + 70;
 
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
@@ -45,6 +45,7 @@ var Player = function() {
     this.score = 0;
 }
 
+//return true if there is no space between player and an enemy
 Player.prototype.weHaveACollision = function(enemyArray){
     var collisionDetected = false;
     for (i = 0; i < enemyArray.length; i++){
@@ -57,6 +58,8 @@ Player.prototype.weHaveACollision = function(enemyArray){
     return collisionDetected;
 }
 
+
+//reset score and position on collision. add to score and reset position when reaching the water.
 Player.prototype.update = function() {
     if (this.weHaveACollision(allEnemies)){
         this.score = 0;
