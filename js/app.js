@@ -40,14 +40,14 @@ var Player = function() {
     this.sprite = 'images/char-boy.png'
     this.x = 202;
     this.y = 404;
-    this.width = 51;
-    this.height = 90;
+    this.width = 50;
+    this.height = 50;
 }
 
 Player.prototype.weHaveACollision = function(enemyArray){
     var collisionDetected = false;
     for (i = 0; i < enemyArray.length; i++){
-        if (this.x < enemyArray[i].x + enemyArray[i].width &&
+        if (this.x + 25 < enemyArray[i].x + enemyArray[i].width &&
            this.x + this.width > enemyArray[i].x &&
            this.y < enemyArray[i].y + enemyArray[i].height &&
            this.y + this.height > enemyArray[i].y)
