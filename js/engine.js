@@ -183,6 +183,6 @@ var Engine = (function(global) {
     global.ctx = ctx;
 
     //once context is available, write initial score to canvas
-    ctx.font = "30px sans-serif"
-    ctx.fillText("Score: " + 0, 0, 30);
+    ctx.font = '30px sans-serif'
+    ctx.fillText('Score: ' + 0, 0, 30);
 })(this);

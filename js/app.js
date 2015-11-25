@@ -64,14 +64,14 @@ Player.prototype.update = function() {
     if (this.weHaveACollision(allEnemies)){
         this.score = 0;
         ctx.clearRect(0, 0, 200, 50);
-        ctx.fillText("Score: " + this.score, 0, 30);
+        ctx.fillText('Score: ' + this.score, 0, 30);
         this.x = 202;
         this.y = 404;
     }
     if (this.y < 1){
         this.score += 1
         ctx.clearRect(0, 0, 200, 50);
-        ctx.fillText("Score: " + this.score, 0, 30);
+        ctx.fillText('Score: ' + this.score, 0, 30);
         this.x = 202;
         this.y = 404;
     }
